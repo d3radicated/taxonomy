@@ -88,7 +88,7 @@ trait TaxonomyTrait {
 
     return $term_relations = $this->related()
     ->join("terms", "term_id", '=', "terms.id" )
-    ->where('term_relations.vocabulary_id', $vocabulary->id)->lists("terms.name","term_id");
+    ->where('term_relations.vocabulary_id', $vocabulary->id)->pluck("terms.name","term_id");
   }
 
   /**
